@@ -1,0 +1,43 @@
+/*
+* Author: Yuri Samuel;
+* Version: 1.0;
+*/
+
+
+/*----GERAL----*/
+*{
+    padding: 0;
+    border: 0;
+    list-style: none;
+}
+
+/*----Ajustes em elementos de formulario----*/
+.linha-input{
+    padding-bottom: 1%;
+}
+.pcr-logo{
+    background-color: black;
+    height: 120px;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+}
+.pojeto-dev-atual{
+    height: 120px;
+}
+.btn-inline{
+    margin: auto;
+    display: block;
+}
+#rf_codigo{
+    width: 115%;
+}
+.glyphicon{
+    top: -22px;
+    left: 7px;
+}
+/*----Ajustes em elementos de template----*/
+.footer{
+    height: 30px;
+    top: 500%;
+    background-color: black;
+    position: relative;
+}
