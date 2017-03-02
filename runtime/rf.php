@@ -34,15 +34,29 @@ class rf extends CrudForm
         $this->endForm();
     }
 
+
+
+//    ****************************************
+
+//    LER NOTE PEDE PARA SE ORIENTAR
+//    LER NOTE PEDE PARA SE ORIENTAR
+//    LER NOTE PEDE PARA SE ORIENTAR
+//    LER NOTE PEDE PARA SE ORIENTAR
+//    LER NOTE PEDE PARA SE ORIENTAR
+//    LER NOTE PEDE PARA SE ORIENTAR
+
+//    ****************************************
+
+
     public function salvar(){
-        print_r($_REQUEST);die();
+//        print_r($_REQUEST);die();
         $aNomeCampos = ['nome', 'descricao', 'criterio_aceitacao', 'fonte', 'codigo', 'status_rf'];
         $aValores = array();
         $aValores['nome'] = (isset($_REQUEST['nome']) && $_REQUEST['nome']) ? $_REQUEST['nome'] : '';
         $aValores['descricao'] = (isset($_REQUEST['descricao']) && $_REQUEST['descricao']) ? $_REQUEST['descricao'] : '';
         $aValores['criterio_aceitacao'] = (isset($_REQUEST['criterio_aceitacao']) && $_REQUEST['criterio_aceitacao']) ? $_REQUEST['criterio_aceitacao'] : '';
         $aValores['fonte'] = (isset($_REQUEST['fonte']) && $_REQUEST['fonte']) ? $_REQUEST['fonte'] : '';
-        $aValores['codigo'] = 'RF-00';
+        $aValores['codigo'] = (isset($_REQUEST['codigo']) && $_REQUEST['codigo']) ? $_REQUEST['codigo'] : '';
         $aValores['prioridade'] = (isset($_REQUEST['prioridade']) && $_REQUEST['prioridade']) ? $_REQUEST['prioridade'] : '';
         $aValores['status_rf'] = 1;
         $this->insert($aValores, 'rf');

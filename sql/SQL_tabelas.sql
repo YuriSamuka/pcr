@@ -64,7 +64,9 @@ CREATE TABLE rastreabilidade(
 CREATE TABLE material_suporte(
 	id_material_suporte			int NOT NULL AUTO_INCREMENT,
     nome 						varchar(62) NOT NULL,
-	data_cadastro 				datetime,
+    descricao       varchar(300),
+    path						varchar(100) NOT NULL,
+	  data_cadastro 				datetime,
     data_ultima_alteracao 		timestamp ON UPDATE CURRENT_TIMESTAMP,
     id_colaborador_cadastro		int,
     id_colaborador_atualizacao 	int,

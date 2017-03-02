@@ -24,13 +24,17 @@ class Rastreabilidade
         $stm = $this->pdo->prepare($sql);
         $stm->execute();
         $codigo = $stm->fetch(PDO::FETCH_ASSOC);
-        $codigo = substr($codigo['codigo'], (strlen($nomeTabela) > 2) ? 4 : 3);
-        if ((int)$codigo < 10){
-            $codigo = strtoupper($nomeTabela) . '-00' . strval((int)$codigo+1);
-        } else if ((int)$codigo < 100){
-            $codigo = strtoupper($nomeTabela) . '-0' . strval((int)$codigo+1);
-        } else {
-            $codigo = strtoupper($nomeTabela) . '-' . strval((int)$codigo+1);
+        if ($codigo){
+            $codigo = substr($codigo['codigo'], (strlen($nomeTabela) > 2) ? 4 : 3);
+            if ((int)$codigo < 10){
+                $codigo = strtoupper($nomeTabela) . '-00' . strval((int)$codigo+1);
+            } else if ((int)$codigo < 100){
+                $codigo = strtoupper($nomeTabela) . '-0' . strval((int)$codigo+1);
+            } else {
+                $codigo = strtoupper($nomeTabela) . '-' . strval((int)$codigo+1);
+            }
+        }else {
+            $codigo = strtoupper($nomeTabela) . '-000';
         }
         return $codigo;
     }
